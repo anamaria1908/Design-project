@@ -3,13 +3,51 @@
     padding: 0;
     box-sizing: border-box;
 }
-/* body{
-    width: 960px;
-    margin: 0 auto;
-} */
+:root {
+    /* colors */
+    --primary-50: #ece7e9;
+    --primary-100: #f7e8d9;
+    --primary-200: #efd0b3;
+    --primary-300: #e7b98e;
+    --primary-400: #dfa168;
+    --primary-500: #d78a42;
+    --primary-600: #540e0e;
+    --primary-700: #430b0b;
+    --primary-800: #320808;
+    --primary-900: #110303;
+
+    /* grey */
+--grey-50: #c9cbcc;
+--grey-100: #a8abad;
+--grey-200: #888c8f;
+--grey-300: #676d70;
+--grey-400: #474d52;
+--grey-500: #262e33;
+--grey-600: #1b2024;
+--grey-700: #15191c;
+--grey-800: #0f1214;
+--grey-900: #0a0c0d;
+
+--primary-white: #fdfaf7;
+--primary-black: #020101;
+}
+a {
+    text-decoration: none;
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--primary-50);
+    color: var(--grey-900);
+}
 img {
     width: 100%;
     display: block;
+}
+.section-title {
+    font-size: 1.75rem;
+    letter-spacing: -0.5px;
 }
 /* 
 =======
@@ -20,13 +58,18 @@ hero
 header {
     /* background-color:aqua; */
     height: 100vh;
-    width: 90vw;
+    /* width: 90vw; */
+    padding-left: 1.5rem;
 }
 h1 {
     margin-bottom: 3rem;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    letter-spacing: -1px;
 }
 
 .hero-section {
+    background: #ece7e9;
     display: grid;
     place-items: center;
     margin: 0 auto;
@@ -40,6 +83,17 @@ h1 {
 }
 .header-text {
     margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.7;
+}
+.header-btn {
+    background: #d78a42;
+    padding: 16px 32px;
+    color: var(--primary-black);
+    text-transform: capitalize;
+    letter-spacing: 1.5px;
+    font-size: 1.25rem;
+    border-radius: 12px;
 }
 
 
@@ -65,7 +119,6 @@ features
 ========
  */
 .features {
-    /* background-color: royalblue; */
     width: 90vw;
     height: auto;
     margin: 0 auto;
@@ -74,12 +127,24 @@ features
 .section-title h2 {
     padding: 2rem 1.25rem;
 }
+.section-center {
+}
 .single-feature {
     margin-bottom: 1.25rem;
     padding-left: 1.25rem;
 }
 .feature-title {
     margin-bottom: 0.75rem;
+    font-size: 1.25rem;
+}
+.feature-text {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+.fa-solid {
+    color: var(--grey-500);
+    /* margin-bottom: 1.25rem; */
+    font-size: 1.5rem;
 }
 @media screen and (min-width: 992px) {
 .section-center {
@@ -89,16 +154,25 @@ features
 }
 
 .testimonial {
-    width: 90vw;
+    /* width: 90vw; */
     margin: 0 auto;
-    
+    background: var(--grey-500);
+    padding: 1.5rem;
+    color: var(--grey-50);
 }
 .testimonial-img {
-    margin-bottom: 1.25rem;
+    /* margin-bottom: 1.25rem; */
 }
 .testimonial-box h2 {
     margin-bottom: 1.25rem;
-    padding-left: 1.25rem;
+    /* padding-left: 1.25rem; */
+    font-size: 1.5rem;
+}
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.7;
 }
 @media screen and (min-width: 992px) {
     .testimonial {
@@ -115,10 +189,59 @@ features
         align-self: center;
     }
 }
+.sell-card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    border-radius: 12px;
+    padding: 16px 32px;
+}
 .sells {
     width: 90vw;
     margin: 0 auto;
     margin-bottom: 2rem;
+}
+.sell-img-container {
+    margin-bottom: 1.25rem;
+}
+.card-title {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    text-align: center;
+}
+.chair-details {
+    list-style: none;
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+.chair-details li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+.card-icon {
+    margin-right: 10px;
+    font-size: 1rem;
+}
+.card-footer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: -2.5rem;
+    margin-bottom: 1.25rem;
+}
+.cards-btn {
+    background: var(--grey-500);
+    padding: 16px 32px;
+    color: var(--primary-white);
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+.cards-btn:hover{
+    background: var(--grey-400);
+    color: var(--primary-100);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.card-footer p {
+    font-size: 24px;
 }
 
 @media screen and (min-width: 992px) {
@@ -137,7 +260,7 @@ features
     }
 }
 footer {
-    border-top: solid #222;
+    border-bottom: 15px solid var(--grey500);
     text-align: center;
     padding: 1rem;
 }
